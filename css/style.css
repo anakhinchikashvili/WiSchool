@@ -1,0 +1,52 @@
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 3rem;
+}
+
+
+.nav-a {
+    font-size: 16px;
+    color: #404040CC;
+}
+
+.nav-a:hover, .nav-a:active {
+    font-weight: bolder;
+}
+
+.logo {
+    height: 41px;
+}
+
+
+.ul-item {
+    display: flex;
+    gap: 3rem;
+    padding: 0;
+    margin: 0;
+}
+
+.img {
+    max-width: 50%;
+    padding: 3rem;
+}
+
+.section1 {
+    padding: 3rem;
+    display: flex;
+}
+
+.btn {
+    width: 161px;
+    height: 60px;
+    background: #09B451;
+    color: white;
+    border: none;
+}
+
+.div-h1 {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+}
