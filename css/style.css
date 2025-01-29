@@ -32,21 +32,64 @@ header {
     padding: 3rem;
 }
 
-.section1 {
+.first-container {
     padding: 3rem;
     display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .btn {
-    width: 161px;
+    width: 50%;
+    max-width: 161px;
     height: 60px;
     background: #09B451;
     color: white;
-    border: none;
+    margin-top: 3rem;
 }
 
 .div-h1 {
     display: flex;
-    align-items: center;
+    flex-direction: column;
+    align-items: flex-start;
     flex-wrap: wrap;
+}
+
+.topics {
+    display: flex;
+    justify-content: space-around;
+    max-width: 1227px;
+    margin-bottom: 141px;
+}
+
+.topics-el {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    max-width: 220px;
+    height: 60px;
+    background: #DDFFFF;
+    padding: 5px;
+    border-radius: 15%;
+}
+
+.fields-container {
+    display: flex;
+    max-width: 1237px;
+    justify-content: space-between;
+    margin: 64px auto;
+}
+
+.fav-h2 {
+    padding-left: 9%;
+    font-size: 32px;
+}
+
+
+@media (max-width: 768px) {
+
+}
+
+@media (max-width: 480px) and (min-width: 320px) {
+
 }
