@@ -26,7 +26,7 @@ header {
     display: none; 
 }
 
-.ul-item {
+.nav-list {
     display: flex;
     gap: 2rem;
     list-style: none;
@@ -39,7 +39,13 @@ header {
     padding: 3rem;
 }
 
-.first-container {
+.img img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+}
+
+.hero {
     padding: 3rem;
     display: flex;
     justify-content: center;
@@ -55,7 +61,7 @@ header {
     margin-top: 3rem;
 }
 
-.div-h1 {
+.hero-content {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
@@ -90,12 +96,12 @@ header {
     overflow: hidden;
 }
 
-.fields-container {
+.course-categories {
     display: flex;
     transition: transform 0.5s ease-in-out;
 }
 
-.fav-el {
+.course-el {
     min-width: 100%; 
     text-align: center;
 }
@@ -119,7 +125,7 @@ header {
     font-size: 32px;
 }
 
-.popular-div {
+.popular-courses {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     grid-template-rows: auto;
@@ -130,7 +136,7 @@ header {
     .burger-menu {
         display: block; 
     }
-    .ul-item {
+    .nav-list {
         display: none; 
         flex-direction: column;
         position: absolute;
@@ -141,30 +147,30 @@ header {
         text-align: center;
     }
 
-    .ul-item.active {
+    .nav-list.active {
         display: flex;
     }
 
-    .popular-div {
+    .popular-courses {
         grid-template-columns: repeat(2, 1fr);
     }
     
 }
 
 @media (max-width: 480px) and (min-width: 320px) {
-    .popular-div {
+    .popular-courses {
         grid-template-columns: repeat(1, 1fr);
     }
 }
 
 @media (min-width: 768px) {
-    .fav-el {
+    .course-el {
         min-width: 50%; 
     }
 }
 
 @media (min-width: 1024px) {
-    .fav-el {
+    .course-el {
         min-width: 25%; 
     }
 }
