@@ -10,6 +10,7 @@ header {
 .nav-a {
     font-size: 16px;
     color: #404040CC;
+    font-family: "Roboto-Regular";
 }
 
 .nav-a:hover, .nav-a:active {
@@ -32,6 +33,10 @@ header {
     list-style: none;
     padding: 0;
     margin: 0;
+}
+
+.title {
+    font-family: "Roboto-Black";
 }
 
 .img {
@@ -89,6 +94,10 @@ header {
     border-radius: 15%;
 }
 
+.topics-span {
+    font-family: "Roboto-Regular";
+}
+
 .slider-container {
     position: relative;
     max-width: 1237px;
@@ -99,10 +108,11 @@ header {
 .course-categories {
     display: flex;
     transition: transform 0.5s ease-in-out;
+    width: 100%;
 }
 
 .course-el {
-    min-width: 100%; 
+    flex: 1 0 25%;
     text-align: center;
 }
 
@@ -123,6 +133,7 @@ header {
 .section-title {
     padding-left: 9%;
     font-size: 32px;
+    font-family: "Roboto-SemiBold";
 }
 
 .popular-courses {
@@ -130,6 +141,10 @@ header {
     grid-template-columns: repeat(3, 1fr);
     grid-template-rows: auto;
     gap: 10px;
+}
+
+.popular-text {
+    font-family: "Roboto-Regular";
 }
 
 @media (max-width: 768px) {
@@ -154,6 +169,10 @@ header {
     .popular-courses {
         grid-template-columns: repeat(2, 1fr);
     }
+
+    .course-el {
+        flex: 1 0 100%; 
+    }
     
 }
 
@@ -163,14 +182,4 @@ header {
     }
 }
 
-@media (min-width: 768px) {
-    .course-el {
-        min-width: 50%; 
-    }
-}
 
-@media (min-width: 1024px) {
-    .course-el {
-        min-width: 25%; 
-    }
-}
