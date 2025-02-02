@@ -4,13 +4,15 @@ header {
     align-items: center;
     padding: 0 3rem;
     position: relative;
+    height: 100px;
 }
 
 
 .nav-a {
     font-size: 16px;
-    color: #404040CC;
+    color: #074622;
     font-family: "Roboto-Regular";
+    
 }
 
 .nav-a:hover, .nav-a:active {
@@ -37,33 +39,45 @@ header {
 
 .title {
     font-family: "Roboto-Black";
+    font-size: 60px;
+}
+
+.education-span {
+    color: #09B451;
 }
 
 .img {
-    max-width: 50%;
+    max-width: 601px;
     padding: 3rem;
 }
 
 .img img {
     width: 100%;
+    max-width: 100%;
     height: auto;
     object-fit: cover;
 }
 
 .hero {
+    max-width: 100%;
     padding: 3rem;
     display: flex;
+    flex-wrap: wrap;
     justify-content: center;
     align-items: center;
+    height: auto;
+    margin: 12px auto 40px;
 }
 
 .btn {
     width: 50%;
-    max-width: 161px;
-    height: 60px;
+    max-width: 200px;
+    height: 50px;
     background: #09B451;
     color: white;
     margin-top: 3rem;
+    font-size: 16px;
+    text-align: center;
 }
 
 .hero-content {
@@ -71,6 +85,8 @@ header {
     flex-direction: column;
     align-items: flex-start;
     flex-wrap: wrap;
+    max-width: 598px;
+    width: 50%;
 }
 
 .topics {
@@ -164,22 +180,35 @@ header {
     padding-left: 9%;
     font-size: 32px;
     font-family: "Roboto-SemiBold";
+    margin-bottom: 64px;
+    padding-top: 20px;
+}
+
+.popular-section {
+    margin: 98px 40px;
+    height: 700px;
 }
 
 .popular-courses {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(3, 1fr); 
     grid-template-rows: auto;
-    gap: 10px;
+        gap: 10px;
+    max-width: 100%;
+    margin: 0 auto;
 }
+
 
 .popular-text {
     font-family: "Roboto-Regular";
+    margin-top: 10px;
+    margin-bottom: 40px;
 }
 
 @media (max-width: 768px) {
     .burger-menu {
         display: block; 
+        cursor: pointer;
     }
     .nav-list {
         display: none; 
@@ -190,21 +219,28 @@ header {
         background: white;
         width: 100%;
         text-align: center;
+        z-index: 10;
     }
 
     .nav-list.active {
         display: flex;
     }
 
-    .popular-courses {
-        grid-template-columns: repeat(2, 1fr);
+
+    .hero {
+        flex-wrap: wrap;
+        display: inline;
+        margin-left: 30px;
     }
     
 }
 
-@media (max-width: 1023px) {
+@media (max-width: 1024px) {
     .course-el {
         flex: 0 0 50%;
+    }
+    .popular-courses {
+        grid-template-columns: repeat(2, 1fr);
     }
 }
 
@@ -214,6 +250,12 @@ header {
     }
     .course-el {
         flex: 0 0 100%;
+    }
+}
+
+@media (max-width: 600px) {
+    .popular-courses {
+        grid-template-columns: repeat(1, 1fr); 
     }
 }
 
