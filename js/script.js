@@ -53,3 +53,12 @@ document.addEventListener("DOMContentLoaded", () => {
     index = 0;
     moveSlide(0);
   });
+
+  const form = document.getElementById("subscription-form")
+
+  form.addEventListener("submit", function (e) {
+    e.preventDefault();
+    let firstName = document.getElementById("fname");
+    let lastName = document.getElementById("lname")
+    let email =document.getElementById("Email")
+  })

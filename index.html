@@ -160,12 +160,37 @@
 
       <section class="subscription-section" id="subscription">
         <div class="subscription-div">
-          <h2 class="section-title">Subscribe To Get Latest Updates</h2>
-          <form action="" id="subscription-form">
-            <div>
-              <input type="text">
-            </div>
-          </form>
+          <div class="subscription-content">
+            <h4 class="subscription-title">Subscribe To Get Latest Updates</h4>
+            <form action="" id="subscription-form" autocomplete="on">
+              <label for="fname">First name:</label><br />
+              <input
+                type="text"
+                id="fname"
+                name="fname"
+                size="50"
+                required
+              /><br />
+              <label for="lname">Last name:</label><br />
+              <input
+                type="text"
+                id="lname"
+                name="lname"
+                size="50"
+                required
+              /><br />
+              <label for="Email">Email:</label><br />
+              <input
+                type="email"
+                id="Email"
+                name="email"
+                size="50"
+                required
+              /><br /><br />
+
+              <input type="submit" value="Submit" />
+            </form>
+          </div>
         </div>
       </section>
     </main>
@@ -177,7 +202,8 @@
           <li>
             <span class="span-contact">Address:</span>
             <a
-              href="https://www.google.com/maps/place/7+Denman+Pl,+London+W1D+7AH,+UK/@51.5108862,-0.1354629,19z/data=!3m1!4b1!4m6!3m5!1s0x487604d38b4e1055:0x12227efbd0d68ec7!8m2!3d51.5108854!4d-0.1348192!16s%2Fg%2F11j8qr4r1b?entry=ttu&g_ep=EgoyMDI1MDEyOS4xIKXMDSoASAFQAw%3D%3D" class="contact-a"
+              href="https://www.google.com/maps/place/7+Denman+Pl,+London+W1D+7AH,+UK/@51.5108862,-0.1354629,19z/data=!3m1!4b1!4m6!3m5!1s0x487604d38b4e1055:0x12227efbd0d68ec7!8m2!3d51.5108854!4d-0.1348192!16s%2Fg%2F11j8qr4r1b?entry=ttu&g_ep=EgoyMDI1MDEyOS4xIKXMDSoASAFQAw%3D%3D"
+              class="contact-a"
               >7 Denman Pl, London W1D 7AH, UK.</a
             >
           </li>
@@ -187,7 +213,9 @@
           </li>
           <li>
             <span class="span-contact">Email:</span>
-            <a href="mailto:Wischool@gmail.com" class="contact-a">Wischool@gmail.com</a>
+            <a href="mailto:Wischool@gmail.com" class="contact-a"
+              >Wischool@gmail.com</a
+            >
           </li>
         </ul>
       </div>

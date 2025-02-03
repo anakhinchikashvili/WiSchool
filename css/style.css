@@ -237,6 +237,82 @@ footer {
     color: white;
 }
 
+.subscription-section {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    overflow: hidden;
+    border-radius: 10%;
+    margin-bottom: 20px;
+}
+
+.subscription-div {
+    width: 100%;
+    background-image: url('../images/subscription_background_img.png');
+    background-repeat: no-repeat;
+    height: 600px;
+    background-position: center;
+    background-size: cover;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.subscription-div::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(118, 181, 134, 0.5); 
+    z-index: 1;
+}
+
+.subscription-content {
+    position: relative;
+    width: 50%;
+    z-index: 2;
+}
+
+.subscription-title {
+    font-family: "Roboto-SemiBold";
+    font-size: 40px;
+    margin-bottom: 50px;
+    color: #04AA6D;
+}
+
+label {
+    font-family: "Roboto-Regular";
+    font-size: 20px;
+    color: #032f16;
+}
+
+input {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    border: 2px solid #98ba98;
+    border-radius: 4px;
+    -webkit-transition: 0.5s;
+    transition: 0.5s;
+    outline: none;
+  }
+
+  input:focus {
+    border: 3px solid #09B451;
+  }
+input[type=submit] {
+    background-color: #04AA6D;
+    border: none;
+    color: white;
+    padding: 16px 32px;
+    text-decoration: none;
+    margin: 4px 2px;
+    cursor: pointer;
+  }
+
 @media (max-width: 1024px) {
     .course-el {
         flex: 0 0 50%;
