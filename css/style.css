@@ -1,3 +1,8 @@
+html, body {
+    overflow-x: hidden;
+    width: 100%;
+}
+
 header {
     display: flex;
     justify-content: space-between;
@@ -185,17 +190,24 @@ header {
 }
 
 .popular-section {
-    margin: 98px 40px;
-    height: 700px;
+    width: 100%;
+    margin-top: 98px;
+    min-height: 700px;
 }
 
 .popular-courses {
     display: grid;
     grid-template-columns: repeat(3, 1fr); 
-    grid-template-rows: auto;
-        gap: 10px;
+    gap: 10px;
     max-width: 100%;
+    width: 1200px;
     margin: 0 auto;
+}
+
+.popular-item img {
+    max-width: 100%;
+    height: auto;
+    display: block;
 }
 
 
@@ -203,6 +215,15 @@ header {
     font-family: "Roboto-Regular";
     margin-top: 10px;
     margin-bottom: 40px;
+}
+
+@media (max-width: 1024px) {
+    .course-el {
+        flex: 0 0 50%;
+    }
+    .popular-courses {
+        grid-template-columns: repeat(2, 1fr);
+    }
 }
 
 @media (max-width: 768px) {
@@ -226,23 +247,19 @@ header {
         display: flex;
     }
 
+    .popular-courses {
+        grid-template-columns: repeat(1, 1fr);
+    }
 
     .hero {
+        display: flex;
         flex-wrap: wrap;
-        display: inline;
         margin-left: 30px;
     }
     
 }
 
-@media (max-width: 1024px) {
-    .course-el {
-        flex: 0 0 50%;
-    }
-    .popular-courses {
-        grid-template-columns: repeat(2, 1fr);
-    }
-}
+
 
 @media (max-width: 480px) {
     .popular-courses {
@@ -250,12 +267,6 @@ header {
     }
     .course-el {
         flex: 0 0 100%;
-    }
-}
-
-@media (max-width: 600px) {
-    .popular-courses {
-        grid-template-columns: repeat(1, 1fr); 
     }
 }
 
