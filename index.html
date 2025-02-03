@@ -16,10 +16,10 @@
       <nav>
         <ul class="nav-list">
           <li class="nav-a"><a href="index.html">Home</a></li>
-          <li class="nav-a"><a href="#">Courses</a></li>
-          <li class="nav-a"><a href="#">Instructors</a></li>
-          <li class="nav-a"><a href="#">Schedules</a></li>
-          <li class="nav-a"><a href="#">Contact Us</a></li>
+          <li class="nav-a"><a href="#top-categories">Top Categories</a></li>
+          <li class="nav-a"><a href="#popular-section">Popular Courses</a></li>
+          <li class="nav-a"><a href="#subscription">Subscription</a></li>
+          <li class="nav-a"><a href="#footer">Contact Us</a></li>
         </ul>
       </nav>
       <div class="burger-menu" id="burgerMenu">☰</div>
@@ -65,7 +65,7 @@
         </div>
       </section>
 
-      <section class="courses">
+      <section class="courses" id="top-categories">
         <h2 class="section-title">
           Choose favourite course from top cartegories
         </h2>
@@ -91,7 +91,7 @@
         </div>
       </section>
 
-      <section class="popular-section">
+      <section class="popular-section" id="popular-section">
         <h2 class="section-title">Most Popular courses</h2>
         <div class="popular-courses">
           <div class="popular-item">
@@ -158,13 +158,42 @@
         </div>
       </section> -->
 
-      <section class="section4">
-        <div></div>
+      <section class="subscription-section" id="subscription">
+        <div class="subscription-div">
+          <h2 class="section-title">Subscribe To Get Latest Updates</h2>
+          <form action="" id="subscription-form">
+            <div>
+              <input type="text">
+            </div>
+          </form>
+        </div>
       </section>
     </main>
-    
-    <footer></footer>
 
+    <footer id="footer">
+      <div class="contact-section">
+        <h3 class="contact-title">Contact Information</h3>
+        <ul>
+          <li>
+            <span class="span-contact">Address:</span>
+            <a
+              href="https://www.google.com/maps/place/7+Denman+Pl,+London+W1D+7AH,+UK/@51.5108862,-0.1354629,19z/data=!3m1!4b1!4m6!3m5!1s0x487604d38b4e1055:0x12227efbd0d68ec7!8m2!3d51.5108854!4d-0.1348192!16s%2Fg%2F11j8qr4r1b?entry=ttu&g_ep=EgoyMDI1MDEyOS4xIKXMDSoASAFQAw%3D%3D" class="contact-a"
+              >7 Denman Pl, London W1D 7AH, UK.</a
+            >
+          </li>
+          <li>
+            <span class="span-contact">Tel:</span>
+            <a href="tel:+44 7911 123456" class="contact-a">+44 7911 123456</a>
+          </li>
+          <li>
+            <span class="span-contact">Email:</span>
+            <a href="mailto:Wischool@gmail.com" class="contact-a">Wischool@gmail.com</a>
+          </li>
+        </ul>
+      </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/js-cookie@3.0.5/dist/js.cookie.min.js"></script>
     <script src="js/script.js"></script>
   </body>
 </html>
