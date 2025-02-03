@@ -54,75 +54,72 @@ document.addEventListener("DOMContentLoaded", () => {
     moveSlide(0);
   });
 
-  const form = document.getElementById("subscription-form")
+ 
+  document.addEventListener("DOMContentLoaded", function () {
+    const form = document.getElementById("subscription-form");
+    const cookieBanner = document.getElementById("cookie-banner");
+    const acceptCookiesBtn = document.getElementById("accept-cookies");
 
-//   form.addEventListener("submit", function (event) {
-//     event.preventDefault();
-
-//     const firstName = document.getElementById("fname").value.trim();
-//     const lastName = document.getElementById("lname").value.trim();
-//     const email = document.getElementById("Email").value.trim();
-    
-//     const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-
-//     if (!firstName || !lastName || !email) {
-//         alert("Please fill in all fields.");
-//         return;
-//     }
-
-//     if (!emailPattern.test(email)) {
-//         alert("Please enter a valid email address.");
-//         return;
-//     }
-
-//     alert("Form submitted successfully!");
-//     this.submit(); 
-// });
-
-document.getElementById("accept-cookies").addEventListener("click", function () {
-  document.getElementById("cookie-banner").style.display = "none";
-  document.cookie = "cookiesAccepted=true; path=/; max-age=31536000"; // 1 year
-});
-
-
-
-  form.addEventListener("submit", function (e) {
-    e.preventDefault();
-    const firstName = document.getElementById("fname").value.trim();
-    const lastName = document.getElementById("lname").value.trim();
-    const email =document.getElementById("Email").value.trim();
-
-    const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-
-    const cookiesAccepted = document.cookie.includes("cookiesAccepted=true");
-
-    if (!firstName || !lastName || !email) {
-        alert("Please fill in all fields.");
-        return;
+    function validateEmail(email) {
+        const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        return emailPattern.test(email);
     }
 
-    if (!emailPattern.test(email)) {
-        alert("Please enter a valid email address.");
-        return;
+    function areCookiesAccepted() {
+        return Cookies.get("cookiesAccepted") === "true";
     }
 
-    if (firstName && lastName && email) {
-      if (cookiesAccepted) {
+    function hideCookieBanner() {
+        cookieBanner.style.display = "none";
+    }
+
+    acceptCookiesBtn.addEventListener("click", function () {
+        Cookies.set("cookiesAccepted", "true", { expires: 365 });
+        hideCookieBanner();
+    });
+
+    if (areCookiesAccepted()) {
+        hideCookieBanner();
+    }
+
+    form.addEventListener("submit", function (e) {
+        e.preventDefault();
+
+        const firstName = document.getElementById("fname").value.trim();
+        const lastName = document.getElementById("lname").value.trim();
+        const email = document.getElementById("Email").value.trim();
+
+        let errors = [];
+
+        if (!firstName) {
+            errors.push("First name is required.");
+        }
+
+        if (!lastName) {
+            errors.push("Last name is required.");
+        }
+
+        if (!email) {
+            errors.push("Email is required.");
+        } else if (!validateEmail(email)) {
+            errors.push("Please enter a valid email address.");
+        }
+
+        if (errors.length > 0) {
+            alert(errors.join("\n"));
+            return;
+        }
+
+        if (!areCookiesAccepted()) {
+            cookieBanner.style.display = "block";
+            return;
+        }
+
         Cookies.set("SavedFirstName", firstName, { expires: 365 });
         Cookies.set("SavedLastName", lastName, { expires: 365 });
         Cookies.set("SavedEmail", email, { expires: 365 });
 
         alert("Form submitted successfully!");
-        this.submit();
-      }else {
-        alert("Please accept cookies before submitting the form.");
-      }
-    }else {
-      alert("Please fill in all fields before submitting.");
-    }
-
-  })
-
-
-
-  
+        form.reset();
+    });
+});
