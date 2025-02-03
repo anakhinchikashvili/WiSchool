@@ -56,24 +56,70 @@ document.addEventListener("DOMContentLoaded", () => {
 
   const form = document.getElementById("subscription-form")
 
+//   form.addEventListener("submit", function (event) {
+//     event.preventDefault();
+
+//     const firstName = document.getElementById("fname").value.trim();
+//     const lastName = document.getElementById("lname").value.trim();
+//     const email = document.getElementById("Email").value.trim();
+    
+//     const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+//     if (!firstName || !lastName || !email) {
+//         alert("Please fill in all fields.");
+//         return;
+//     }
+
+//     if (!emailPattern.test(email)) {
+//         alert("Please enter a valid email address.");
+//         return;
+//     }
+
+//     alert("Form submitted successfully!");
+//     this.submit(); 
+// });
+
+document.getElementById("accept-cookies").addEventListener("click", function () {
+  document.getElementById("cookie-banner").style.display = "none";
+  document.cookie = "cookiesAccepted=true; path=/; max-age=31536000"; // 1 year
+});
+
+
+
   form.addEventListener("submit", function (e) {
     e.preventDefault();
-    const firstName = document.getElementById("fname").value;
-    const lastName = document.getElementById("lname").value;
-    const email =document.getElementById("Email").value;
+    const firstName = document.getElementById("fname").value.trim();
+    const lastName = document.getElementById("lname").value.trim();
+    const email =document.getElementById("Email").value.trim();
 
-    if (firstName && lastName && email) {
-      const userConfirmed = confirm("Are you sure you want to submit the form?");
-      if (userConfirmed) {
-        Cookies.set("SavedFirstName", firstName);
-        Cookies.set("SavedLastName", lastName);
-        Cookies.set("SavedEmail", email);
-      }else {
-        Cookies.remove("SavedFirstName","SavedLastName","SavedEmail" );
-      }
+    const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+    const cookiesAccepted = document.cookie.includes("cookiesAccepted=true");
+
+    if (!firstName || !lastName || !email) {
+        alert("Please fill in all fields.");
+        return;
     }
 
-    this.submit();
+    if (!emailPattern.test(email)) {
+        alert("Please enter a valid email address.");
+        return;
+    }
+
+    if (firstName && lastName && email) {
+      if (cookiesAccepted) {
+        Cookies.set("SavedFirstName", firstName, { expires: 365 });
+        Cookies.set("SavedLastName", lastName, { expires: 365 });
+        Cookies.set("SavedEmail", email, { expires: 365 });
+
+        alert("Form submitted successfully!");
+        this.submit();
+      }else {
+        alert("Please accept cookies before submitting the form.");
+      }
+    }else {
+      alert("Please fill in all fields before submitting.");
+    }
 
   })
 

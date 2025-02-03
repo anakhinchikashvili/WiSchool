@@ -313,6 +313,41 @@ input[type=submit] {
     cursor: pointer;
   }
 
+  .cookie-banner {
+    position: fixed;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #333;
+    color: white;
+    padding: 15px 20px;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    font-size: 14px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+}
+
+.cookie-banner a {
+    color: #00e63a;
+    text-decoration: underline;
+}
+
+.cookie-banner button {
+    background-color: #00e63a;
+    color: #333;
+    border: none;
+    padding: 8px 15px;
+    cursor: pointer;
+    font-weight: bold;
+    border-radius: 5px;
+}
+
+.cookie-banner button:hover {
+    background-color: #098027;
+}
+
 @media (max-width: 1024px) {
     .course-el {
         flex: 0 0 50%;
