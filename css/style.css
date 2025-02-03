@@ -115,11 +115,13 @@ header {
     font-family: "Roboto-Regular";
 }
 
+
 .slider-container {
     position: relative;
     max-width: 1237px;
     margin: auto;
     overflow: hidden;
+    border: #09B451 solid 5px;
 }
 
 .course-wrapper {
@@ -130,6 +132,7 @@ header {
 .course-categories {
     display: flex;
     transition: transform 0.5s ease-in-out;
+    padding-bottom: 10px;
 }
 
 .course-el {
@@ -178,11 +181,25 @@ header {
 }
 
 .section-title {
-    padding-left: 9%;
+    padding-left: 5%;
     font-size: 32px;
     font-family: "Roboto-SemiBold";
     margin-bottom: 64px;
     padding-top: 20px;
+    text-decoration-line: underline;
+    text-decoration-color: green;
+    text-decoration-style: solid ;
+}
+
+.popular-title {
+    margin-left: 13%;
+    font-size: 32px;
+    font-family: "Roboto-SemiBold";
+    margin-bottom: 64px;
+    padding-top: 20px;
+    text-decoration-line: underline;
+    text-decoration-color: green;
+    text-decoration-style: solid ;
 }
 
 .popular-section {
@@ -211,6 +228,9 @@ header {
     font-family: "Roboto-Regular";
     margin-top: 10px;
     margin-bottom: 40px;
+    font-style: oblique;
+    font-size: 20px;
+    padding: 5px;
 }
 
 footer {
@@ -351,6 +371,9 @@ input[type=submit] {
         grid-template-columns: repeat(2, 1fr);
         justify-items: center;
     }
+    .popular-title {
+        margin-left: 6%;
+    }
 }
 
 @media (max-width: 768px) {
@@ -399,6 +422,29 @@ input[type=submit] {
     .course-el {
         flex: 0 0 100%;
     }
+    .popular-text {
+        font-size: 16px;
+    }
+    .title{
+        font-size: 35px;
+    }
 }
 
-
+@media (max-width: 320px) {
+    .btn {
+        width: 40%;
+    }
+    .subscription-title {
+        font-size: 30px;
+    }
+    label {
+        font-size: 16px;
+    }
+    .contact-title {
+        font-size: 25px;
+    } 
+    .span-contact {
+        font-size: 16px;
+    }
+    
+}
