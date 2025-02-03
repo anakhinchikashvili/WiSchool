@@ -58,7 +58,25 @@ document.addEventListener("DOMContentLoaded", () => {
 
   form.addEventListener("submit", function (e) {
     e.preventDefault();
-    let firstName = document.getElementById("fname");
-    let lastName = document.getElementById("lname")
-    let email =document.getElementById("Email")
+    const firstName = document.getElementById("fname").value;
+    const lastName = document.getElementById("lname").value;
+    const email =document.getElementById("Email").value;
+
+    if (firstName && lastName && email) {
+      const userConfirmed = confirm("Are you sure you want to submit the form?");
+      if (userConfirmed) {
+        Cookies.set("SavedFirstName", firstName);
+        Cookies.set("SavedLastName", lastName);
+        Cookies.set("SavedEmail", email);
+      }else {
+        Cookies.remove("SavedFirstName","SavedLastName","SavedEmail" );
+      }
+    }
+
+    this.submit();
+
   })
+
+
+
+  
