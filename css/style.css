@@ -16,8 +16,7 @@ header {
 .nav-a {
     font-size: 16px;
     color: #074622;
-    font-family: "Roboto-Regular";
-    
+    font-family: "Roboto-Regular";   
 }
 
 .nav-a:hover, .nav-a:active {
@@ -233,34 +232,59 @@ header {
     padding: 5px;
 }
 
-#instructor-section {
-    max-width: 500px;
+#instructors-section {
+    max-width: 900px;
     margin: 50px auto;
-    padding: 20px;
-    background: rgb(239, 252, 237);
+    text-align: center;
+    font-family: "Roboto-Regular";
+}
+
+#instructors-title {
+    color: #000000;
+    font-size: 24px;
+    margin-bottom: 20px;
+    text-decoration-line: underline;
+    text-decoration-color: green;
+    text-decoration-style: solid ;
+}
+
+#instructors-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+}
+
+.instructor-card {
+    background: rgb(241, 254, 241);
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 280px;
+    padding: 15px;
     text-align: center;
 }
 
-#instructor-title {
-    color: #333;
-    font-size: 22px;
-    margin-bottom: 20px;
-}
-
-#instructor-div {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
 #instructor-img {
-    width: 120px;
-    height: 120px;
+    width: 100px;
+    height: 100px;
     border-radius: 50%;
     border: 3px solid #169337;
-    margin-bottom: 15px;
+    margin-bottom: 10px;
+}
+
+.instructor-info {
+    list-style: none;
+    padding: 0;
+}
+
+.instructor-info li {
+    background: #30a54f;
+    color: white;
+    padding: 8px;
+    margin: 5px 0;
+    border-radius: 5px;
+    font-size: 14px;
+    text-align: left;
 }
 
 .subscription-section {
@@ -414,6 +438,12 @@ footer {
     }
     .popular-title {
         margin-left: 6%;
+    }
+    .nav-a {
+        font-size: 14px;
+    }
+    .nav-list {
+        gap: 1rem;
     }
 }
 

@@ -125,7 +125,7 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 let request = new XMLHttpRequest();
-request.open("GET", "https://randomuser.me/api/")
+request.open("GET", "https://randomuser.me/api/?results=3")
 request.responseType = "json";
 
 request.addEventListener("load", function () {
@@ -133,26 +133,37 @@ request.addEventListener("load", function () {
     let responseJs = request.response;
     console.log(responseJs);
 
-    let instructor = responseJs.results[0];
+    let instructorsContainer = document.getElementById("instructors-container");
+    instructorsContainer.innerHTML = "";
 
-    let instructorImgElement = document.getElementById("instructor-img");
-    instructorImgElement.src = instructor.picture.large;
-    instructorImgElement.alt = `${instructor.name.first} ${instructor.name.last}`;
-  
-    let instructorUl = document.getElementById("instructor-ul");
-    instructorUl.innerHTML = "";
+    responseJs.results.forEach(instructor => {
+      let instructorCard = document.createElement("div");
+      instructorCard.classList.add("instructor-card");
 
-    let fullName = `👩‍🏫 ${instructor.name.title} ${instructor.name.first} ${instructor.name.last}`;
-    let email = `📧 Email: ${instructor.email}`;
-    let phone = `📞 Phone: ${instructor.phone}`;
-    let address = `📍 Address: ${instructor.location.street.name} ${instructor.location.street.number}, ${instructor.location.city}, ${instructor.location.country}`;
+      let img = document.createElement("img");
+      img.src = instructor.picture.large;
+      img.alt = `${instructor.name.first} ${instructor.name.last}`;
+      img.classList.add("instructor-img");
 
-    let infoArray = [fullName, email, phone, address];
+      let ul = document.createElement("ul");
+      ul.classList.add("instructor-info");
 
-    infoArray.forEach(info => {
-      let instructorLiElement = document.createElement("li");
-      instructorLiElement.textContent = info;
-      instructorUl.appendChild(instructorLiElement);
+      let fullName = `👩‍🏫 ${instructor.name.title} ${instructor.name.first} ${instructor.name.last}`;
+      let email = `📧 Email: ${instructor.email}`;
+      let phone = `📞 Phone: ${instructor.phone}`;
+      let address = `📍 Address: ${instructor.location.street.name} ${instructor.location.city}`;
+
+      let infoArray = [fullName, email, phone, address];
+
+      infoArray.forEach(info => {
+          let li = document.createElement("li");
+          li.textContent = info;
+          ul.appendChild(li);
+      });
+
+      instructorCard.appendChild(img);
+      instructorCard.appendChild(ul);
+      instructorsContainer.appendChild(instructorCard);
     });
   } else {
     console.error("Error fetching instructor data:", request.status);
