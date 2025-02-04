@@ -123,3 +123,45 @@ document.addEventListener("DOMContentLoaded", () => {
         form.reset();
     });
 });
+
+let request = new XMLHttpRequest();
+request.open("GET", "https://randomuser.me/api/")
+request.responseType = "json";
+
+request.addEventListener("load", function () {
+  if (request.status === 200) {
+    let responseJs = request.response;
+    console.log(responseJs);
+
+    let instructor = responseJs.results[0];
+
+    let instructorImgElement = document.getElementById("instructor-img");
+    instructorImgElement.src = instructor.picture.large;
+    instructorImgElement.alt = `${instructor.name.first} ${instructor.name.last}`;
+  
+    let instructorUl = document.getElementById("instructor-ul");
+    instructorUl.innerHTML = "";
+
+    let fullName = `👩‍🏫 ${instructor.name.title} ${instructor.name.first} ${instructor.name.last}`;
+    let email = `📧 Email: ${instructor.email}`;
+    let phone = `📞 Phone: ${instructor.phone}`;
+    let address = `📍 Address: ${instructor.location.street.name} ${instructor.location.street.number}, ${instructor.location.city}, ${instructor.location.country}`;
+
+    let infoArray = [fullName, email, phone, address];
+
+    infoArray.forEach(info => {
+      let instructorLiElement = document.createElement("li");
+      instructorLiElement.textContent = info;
+      instructorUl.appendChild(instructorLiElement);
+    });
+  } else {
+    console.error("Error fetching instructor data:", request.status);
+  }
+
+})
+
+request.addEventListener("error", function () {
+  console.error("Network error occurred while fetching instructor data.");
+})
+
+request.send()

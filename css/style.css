@@ -233,22 +233,34 @@ header {
     padding: 5px;
 }
 
-footer {
-    background-color: black;
-    height: 300px;
+#instructor-section {
+    max-width: 500px;
+    margin: 50px auto;
+    padding: 20px;
+    background: rgb(239, 252, 237);
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
 }
-.contact-title {
-    font-family: "Roboto-SemiBold";
-    font-size: 35px;
-    color: #0AC75ACC;
+
+#instructor-title {
+    color: #333;
+    font-size: 22px;
+    margin-bottom: 20px;
 }
-.span-contact {
-    color: #38f787cc;
-    font-family: "Roboto-Regular";
-    font-size: 20px;
+
+#instructor-div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
-.contact-a {
-    color: white;
+
+#instructor-img {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    border: 3px solid #169337;
+    margin-bottom: 15px;
 }
 
 .subscription-section {
@@ -309,14 +321,14 @@ input {
     margin: 8px 0;
     border: 2px solid #98ba98;
     border-radius: 4px;
-    -webkit-transition: 0.5s;
+    transition: 0.5s;
     transition: 0.5s;
     outline: none;
   }
 
-  input:focus {
+input:focus {
     border: 3px solid #09B451;
-  }
+}
 input[type=submit] {
     background-color: #04AA6D;
     border: none;
@@ -325,7 +337,36 @@ input[type=submit] {
     text-decoration: none;
     margin: 4px 2px;
     cursor: pointer;
-  }
+}
+
+footer {
+    background-color: black;
+    height: 300px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    line-height: 1.8;
+}
+.contact-title {
+    font-family: "Roboto-SemiBold";
+    font-size: 35px;
+    color: #0AC75ACC;
+    margin-bottom: 20px;
+}
+.span-contact {
+    color: #38f787cc;
+    font-family: "Roboto-Regular";
+    font-size: 20px;
+}
+.contact-a {
+    color: white;
+}
+
+.social-media {
+    margin-top: 5px;
+}
+
+
 
   .cookie-banner {
     position: fixed;
